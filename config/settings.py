@@ -140,6 +140,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'config', 'assets'),
+)
+
 # login_required 요청 경로 커스터마이징
 # - 기본 값은'/accounts/login/'
 # LOGIN_URL = '/members/login/'
