@@ -26,7 +26,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['peaceful-wildwood-34659.herokuapp.com']
+# ALLOWED_HOSTS = ['peaceful-wildwood-34659.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 AUTHENTICATION_BACKENDS = (
