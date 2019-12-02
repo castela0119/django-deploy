@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8qgt=gjg#+yhf!ft*!7pen9mv(wggzc3k_&ie_l2k6-g9vdwgu'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['peaceful-wildwood-34659.herokuapp.com']
 
 
 AUTHENTICATION_BACKENDS = (
@@ -147,3 +148,7 @@ AUTH_USER_MODEL = 'accounts.User'
 
 # 로그인 후 리다이렉트 경로
 LOGIN_REDIRECT_URL ='articles:index'
+
+# heroku settings
+import django_heroku
+django_heroku.settings(locals())
